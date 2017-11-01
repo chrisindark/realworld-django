@@ -11,3 +11,4 @@ six==1.11.0
 ipython==5.5.0
 python-dotenv==0.7.1
 django-rest-swagger==2.1.2
+psycopg2==2.7.3.2
