@@ -213,7 +213,6 @@ class ArticlesFeedAPIView(generics.ListAPIView):
     permission_classes = (IsAuthenticated,)
 
     def get_queryset(self):
-        print('follows', self.request.user)
         return Article.objects.filter(
             author__in=self.request.user.profile.follows.all()
         )
