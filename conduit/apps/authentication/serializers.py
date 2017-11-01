@@ -111,7 +111,6 @@ class UserSerializer(serializers.ModelSerializer):
     # so. Moreover, `UserSerializer` should never expose profile information,
     # so we set `write_only=True`.
     profile = ProfileSerializer(write_only=True, required=False)
-
     # We want to get the `bio` and `image` fields from the related Profile
     # model.
     bio = serializers.CharField(source='profile.bio', read_only=True)

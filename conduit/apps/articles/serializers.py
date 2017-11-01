@@ -10,7 +10,6 @@ class ArticleSerializer(serializers.ModelSerializer):
     author = ProfileSerializer(read_only=True)
     description = serializers.CharField(required=False)
     slug = serializers.SlugField(required=False, read_only=True)
-
     favorited = serializers.SerializerMethodField()
     favoritesCount = serializers.SerializerMethodField(
         method_name='get_favorites_count'
@@ -77,7 +76,6 @@ class ArticleSerializer(serializers.ModelSerializer):
 
 class CommentSerializer(serializers.ModelSerializer):
     author = ProfileSerializer(required=False, read_only=True)
-
     createdAt = serializers.SerializerMethodField(method_name='get_created_at')
     updatedAt = serializers.SerializerMethodField(method_name='get_updated_at')
 
