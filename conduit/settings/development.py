@@ -41,16 +41,19 @@ SWAGGER_SETTINGS = {
 }
 
 # DATABASE SETTINGS
-DATABASES = {
-    'default': {
-        'NAME': 'realworld_django',
-        'ENGINE': 'django.db.backends.mysql',
-        'USER': 'root',
-        'PASSWORD': 'mindfire',
-        'HOST': 'localhost',
-        'PORT': '3306',
-    }
+DATABASES = {}
+DATABASES['default'] = {
+    'ENGINE': 'django.db.backends.sqlite3',
+    'NAME': os.path.join(BASE_DIR, 'db.sqlite3')
 }
+# DATABASES['default'] = {
+#     'NAME': 'realworld_django',
+#     'ENGINE': 'django.db.backends.mysql',
+#     'USER': 'root',
+#     'PASSWORD': 'mindfire',
+#     'HOST': 'localhost',
+#     'PORT': '3306',
+# }
 
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ORIGIN_WHITELIST = ()
